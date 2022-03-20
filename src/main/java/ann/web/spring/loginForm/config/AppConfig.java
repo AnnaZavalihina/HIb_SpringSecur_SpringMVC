@@ -11,12 +11,15 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Properties;
 
+import static org.hibernate.cfg.Environment.*;
+
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScans(value = { @ComponentScan("ann.web.loginForm.spring.dao"),
-        @ComponentScan("ann.web.loginForm.spring.service") })
+@ComponentScans(value = { @ComponentScan("com.boraji.tutorial.spring.dao"),
+        @ComponentScan("com.boraji.tutorial.spring.service") })
 public class AppConfig {
+
     @Autowired
     private Environment env;
 
@@ -48,6 +51,7 @@ public class AppConfig {
 
         return factoryBean;
     }
+
     @Bean
     public HibernateTransactionManager getTransactionManager() {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
@@ -55,18 +59,3 @@ public class AppConfig {
         return transactionManager;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

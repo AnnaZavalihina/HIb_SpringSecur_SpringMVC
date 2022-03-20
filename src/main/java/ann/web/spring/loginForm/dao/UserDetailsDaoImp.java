@@ -1,9 +1,11 @@
 package ann.web.spring.loginForm.dao;
 
 import ann.web.spring.loginForm.entity.User;
-import com.mysql.cj.xdevapi.SessionFactory;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserDetailsDaoImp implements UserDetailsDao{
 
     @Autowired
@@ -11,6 +13,6 @@ public class UserDetailsDaoImp implements UserDetailsDao{
 
     @Override
     public User findUserByUsername(String name) {
-        return sessionFactory.getCurrentSession().get(User.class, name);
+        return sessionFactory.getCurrentSession().get(User.class,name);
     }
 }
