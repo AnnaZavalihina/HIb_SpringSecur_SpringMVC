@@ -16,8 +16,8 @@ import static org.hibernate.cfg.Environment.*;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScans(value = { @ComponentScan("com.boraji.tutorial.spring.dao"),
-        @ComponentScan("com.boraji.tutorial.spring.service") })
+@ComponentScans(value = { @ComponentScan("ann.web.spring.loginForm.dao"),
+        @ComponentScan("ann.web.spring.loginForm.service") })
 public class AppConfig {
 
     @Autowired
